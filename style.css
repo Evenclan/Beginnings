@@ -1,0 +1,330 @@
+/* ---------- Global ---------- */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  background: #fff;
+  color: #3d3d3d;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Libre Baskerville", serif;
+}
+
+section {
+  padding: 108px 0;
+}
+
+.section-title {
+  position: relative;
+  font-size: 35px;
+  margin: 0 0 60px 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.section-title::after {
+  position: absolute;
+  content: '';
+  bottom: -18px;
+  left: 50%;
+  width: 15%;
+  height: 8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #fa8231;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Splash --------- */
+.splash {
+  height: 100vh;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("https://as2.ftcdn.net/jpg/02/11/18/41/500_F_211184114_PME7iAEF9uuMtQuyunmcQkmUxWmVWDil.jpg");
+}
+
+.splash i {
+  font-size: 50px;
+  background: #fa8231;
+  color: #f1f2f6;
+  width: 82px;
+  height: 82px;
+  line-height: 82px;
+  border-radius: 50%;
+}
+
+.splash-inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Still splash, but a page title - H1 and H2 */
+.page-title {
+  color: #f1f2f6;
+  font-size: 60px;
+  margin: 48px 0 0 0;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+}
+
+.page-title::after {
+  position: absolute;
+  content: '';
+  bottom: -24px;
+  left: 50%;
+  width: 30%;
+  height: 8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #fa8231;
+}
+
+.page-subtitle {
+  color: #f1f2f6;
+  font-size: 30px;
+  margin: 48px 0 0 0;
+}
+
+/* --------- Intro --------- */
+.intro {
+  color: #fa8231;
+}
+
+.intro p {
+  width: 70%;
+  margin: 0 auto;
+  padding: 38px 0;
+  font-size: 24px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+/* --------- About --------- */
+.about {
+  background: #dfe4ea;
+}
+
+/* --------- Skills --------- */
+.skill-left, .skill-right {
+  position: relative;
+}
+
+.skill-image {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.skill-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 1.25s;
+  transition: all 1.25s;
+}
+
+.skill-image img:hover {
+  -webkit-transform: scale(1.22);
+          transform: scale(1.22);
+}
+
+.skill-right .skill-image {
+  right: 0;
+}
+
+.skill-right .skill-description {
+  padding: 36px 55% 36px 0;
+  text-align: right;
+}
+
+.skill-left .skill-description {
+  padding: 36px 0 36px 55%;
+  text-align: left;
+}
+
+.skill-title {
+  font-family: "Raleway", sans-serif;
+}
+
+.skills p {
+  font-family: "Libre Baskerville", serif;
+}
+
+/* ---------- Gallery ------------ */
+.gallery-grid {
+  float: left;
+  width: 33.33%;
+  height: auto;
+  position: relative;
+  vertical-align: top;
+}
+
+.gallery-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.gallery-middle {
+  -webkit-transition: 0.9s ease;
+  transition: 0.9s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery-text {
+  color: black;
+  font-size: 26px;
+  padding: 6px 12px;
+  overflow: hidden;
+  font-weight: 900;
+}
+
+.gallery-text p {
+  max-height: 140px;
+  overflow: hidden;
+}
+
+/* ---------- MEDIA FOR TABLETS/SMARTPHONES ----------  */
+@media (min-width: 701px) {
+  .gallery-grid:hover .gallery-image {
+    opacity: 0.45;
+  }
+  .gallery-grid:hover .gallery-middle {
+    opacity: 1;
+  }
+}
+
+/* Smaller resolution on PC, shows 2 images instead of 3 */
+@media (max-width: 900px) {
+  .gallery-grid {
+    float: left;
+    width: 50%;
+    height: auto;
+    position: relative;
+    vertical-align: top;
+  }
+}
+
+/* Hides hover effect!*/
+@media (max-width: 700px) {
+  .gallery-grid {
+    float: left;
+    width: 50%;
+    height: auto;
+    position: relative;
+    vertical-align: top;
+  }
+  .gallery-text p {
+    display: none;
+  }
+  .gallery-btn {
+    display: none;
+  }
+}
+
+/* MEDIA FOR SMARTPHONES */
+@media (max-width: 560px) {
+  .gallery-grid {
+    float: left;
+    width: 100%;
+    height: auto;
+    position: relative;
+    vertical-align: top;
+  }
+}
+
+.row::before,
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* ---------- Button Styles --------- */
+.gallery-btn {
+  padding: 6px 20px;
+  margin-top: 10px;
+  color: #f1f2f6;
+  background: #fa8231;
+  border-radius: 10%;
+  border: none;
+  vertical-align: baseline;
+}
+
+.btn {
+  margin-top: 25px;
+  color: #f1f2f6;
+  background: #fa8231;
+  border: none;
+  padding: 16px;
+  border-radius: 10%;
+}
+
+.gallery-btn:hover {
+  cursor: pointer;
+  background: #ea7121;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #ea7121;
+}
+
+/* --------- Form  --------- */
+.contact {
+  background: #dfe4ea;
+}
+
+input[type=text], input[type=email] {
+  padding: 10px;
+  width: 45%;
+}
+
+textarea {
+  width: 45%;
+  height: 150px;
+  padding: 10px;
+  max-width: 45%;
+  min-width: 45%;
+  min-height: 60px;
+  max-height: 420px;
+}
+
+/* --------- Footer  --------- */
+footer {
+  background: #2f3542;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 10px 0;
+  color: #f1f2f6;
+}
+/*# sourceMappingURL=style.css.map */
